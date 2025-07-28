@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Number Mapping and Sorting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Ascending and Descending for Mapped Numbers</h2>
+    <p id="product_value">Mapped values will appear here.</p>
+
+    <button onclick="ascending()">Ascending Order</button>
+    <button onclick="descending()">Descending Order</button>
+
+    <script>
+        // Step 8: Create an array of numbers
+        const numbers = [1, 2, 3, 4, 5, 6];
+
+        // Step 9: Multiply each element in the array by 50
+        function myFunction(num) {
+            return num * 50;
+        }
+
+        // Step 10: Map the array using the multiplication function
+        let newarray = numbers.map(myFunction);
+
+        // Step 11: Display the mapped values initially
+        document.getElementById("product_value").innerHTML =
+            "The Mapped values are: " + newarray;
+
+        // Step 12: Ascending order function
+        function ascending() {
+            newarray.sort(function (a, b) { return a - b; });
+            document.getElementById("product_value").innerHTML =
+                "The ascending order of mapped values are: " + newarray;
+        }
+
+        // Step 12: Descending order function
+        function descending() {
+            newarray.sort(function (a, b) { return b - a; });
+            document.getElementById("product_value").innerHTML =
+                "The descending order of mapped values are: " + newarray;
+        }
+    </script>
+
+</body>
+
+</html>
