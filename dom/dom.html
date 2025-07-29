@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title id="demo">DOM Structure</title>
+</head>
+
+<body>
+
+    <p>Adding JS as separate file and assigning value from one node to other</p>
+
+    <button type="button" onclick="myFunction()">Click Me!</button>
+
+    <p id="result"></p>
+    <p id="result1"></p>
+
+    <script>
+        function myFunction() {
+            // Using firstChild
+            document.getElementById("result").innerHTML =
+                document.getElementById("demo").firstChild.nodeValue;
+
+            // Using childNodes[0]
+            document.getElementById("result1").innerHTML =
+                document.getElementById("demo").childNodes[0].nodeValue;
+        }
+    </script>
+
+</body>
+
+</html>
