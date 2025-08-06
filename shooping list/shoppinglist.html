@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    ul {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Shopping List</h2>
+  
+  <!-- Form for adding items -->
+  <form id="myForm">
+    <input type="text" id="myInput" placeholder="Add an item" required>
+    <button type="submit">Add</button>
+  </form>
+
+  <!-- List container -->
+  <ul id="myItem">
+    <li>note</li>
+    <li>pen</li>
+  </ul>
+
+  <script>
+    // Get HTML elements
+    const myForm = document.getElementById("myForm");
+    const myInput = document.getElementById("myInput");
+    const myItem = document.getElementById("myItem");
+
+    // Submit event listener
+    myForm.addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form from reloading the page
+      createItem(myInput.value); // Add item
+      myInput.value = ""; // Clear input after adding
+    });
+
+    // Function to create new list item
+    function createItem(inputItems) {
+      const items = `<li>${inputItems}</li>`;
+      myItem.insertAdjacentHTML("beforeend", items); // Add item to list
+    }
+  </script>
+
+</body>
+</html>
