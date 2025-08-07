@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Random Background Color</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="changeColor()">Click Me!</button>
+
+    <script>
+        function changeColor() {
+            // Generate random R, G, B values (0–255)
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+
+            // Create the RGB color string
+            let bgcolor = "rgb(" + r + "," + g + "," + b + ")";
+
+            // Set the background color of the body
+            document.body.style.background = bgcolor;
+        }
+    </script>
+
+</body>
+
+</html>
