@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>JavaScript String Methods and Loops</h2>
+    <p>Numbers from 1 to 10</p>
+    <p id="result"></p>
+
+    <script>
+        // Loop to display numbers from 1 to 10
+        let number = "";
+        for (let i = 1; i < 11; i++) {
+            number += i + "<br>";
+        }
+
+        // Display the result inside the <p> with id="result"
+        document.getElementById("result").innerHTML = number;
+
+        // Print a rounded random number
+        document.write("The random value is " + Math.floor(Math.random() * 100) + "<br>");
+
+        // Print the current date
+        let date = new Date();
+        document.write("Today's Date is " + date.getDate());
+    </script>
+</body>
+
+</html>
