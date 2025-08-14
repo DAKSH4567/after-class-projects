@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Number Changer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        #number {
+            font-size: 100px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Click on the Number to start/stop</p>
+    <div id="number">0</div>
+
+    <script>
+        // Step a: Array with numbers 1–10 and variables
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let intervalId = null;
+        let isChanging = false;
+
+        // Step b: Function to select random number
+        function change() {
+            let randomIndex = Math.floor(Math.random() * numbers.length);
+            document.getElementById("number").textContent = numbers[randomIndex];
+        }
+
+        // Step c: Function to start/stop number changing
+        function toggleChange() {
+            if (!isChanging) {
+                // Step d: If false → start changing
+                intervalId = setInterval(change, 100); // 0.1 sec = 100 ms
+                isChanging = true;
+            } else {
+                // Step e: If true → stop changing
+                clearInterval(intervalId);
+                isChanging = false;
+            }
+        }
+
+        // On click of number → toggleChange
+        document.getElementById("number").onclick = toggleChange;
+    </script>
+</body>
+
+</html>
